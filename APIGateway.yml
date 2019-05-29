@@ -1,0 +1,17 @@
+# 使用するポート番号
+server:
+  port: 8000
+
+# Eurekaの情報
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# ProductServiceのルート情報
+zuul:
+  routes:
+    users:
+      path: /items/**
+      serviceId: ProductService
+      stripPrefix: false
